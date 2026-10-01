@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MUSICLOGIST | Your Library</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+
+        /* =====================================================
+           LIBRARY PAGE
+           PROFESSIONAL OVERRIDE
+           ===================================================== */
+
+        .library-header {
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            min-height: 220px;
+
+            margin-bottom: 24px;
+
+            padding: 42px 48px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 24px;
+
+            background:
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(139,92,246,0.20),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 70% 100%,
+                    rgba(6,182,212,0.10),
+                    transparent 35%
+                ),
+                rgba(255,255,255,0.035);
+
+            box-shadow:
+                0 18px 55px rgba(0,0,0,0.18);
+
+        }
+
+
+        .library-header::after {
+
+            content: "";
+
+            position: absolute;
+
+            right: 55px;
+
+            top: -80px;
+
+            width: 210px;
+
+            height: 210px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(139,92,246,0.10);
+
+            filter: blur(45px);
+
+            pointer-events: none;
+
+        }
+
+
+        .library-title-area {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+        }
+
+
+        .library-main-icon {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 76px;
+
+            height: 76px;
+
+            flex-shrink: 0;
+
+            border: 1px solid
+                rgba(255,255,255,0.10);
+
+            border-radius: 20px;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #06b6d4
+                );
+
+            box-shadow:
+                0 16px 35px
+                rgba(139,92,246,0.25);
+
+            font-size: 27px;
+
+        }
+
+
+        .library-title-area .section-kicker {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #a78bfa;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .library-title-area h1 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(32px, 4vw, 46px);
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+
+        }
+
+
+        .library-title-area p {
+
+            margin: 10px 0 0;
+
+            color: #a1a1aa;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           LIBRARY TABS
+           ===================================================== */
+
+        section.library-tabs {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            width: fit-content;
+
+            margin: 0 0 30px;
+
+            padding: 5px;
+
+            border: 1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 13px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+        }
+
+
+        section.library-tabs .library-tab {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            min-width: 125px;
+
+            height: 42px;
+
+            padding: 0 17px;
+
+            border: 1px solid transparent;
+
+            border-radius: 9px;
+
+            color: #a1a1aa;
+
+            background: transparent;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                0.2s ease;
+
+        }
+
+
+        section.library-tabs .library-tab:hover {
+
+            color: #ffffff;
+
+            background:
+                rgba(255,255,255,0.055);
+
+        }
+
+
+        section.library-tabs
+        .library-tab.active {
+
+            color: #ffffff;
+
+            border-color:
+                rgba(139,92,246,0.25);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.22),
+                    rgba(6,182,212,0.08)
+                );
+
+        }
+
+
+        section.library-tabs
+        .library-tab i {
+
+            color: #a78bfa;
+
+        }
+
+
+        /* =====================================================
+           CONTENT SECTION
+           ===================================================== */
+
+        .library-page-content-section {
+
+            margin-top: 0;
+
+        }
+
+
+        .library-page-content-section
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+
+            padding-bottom: 17px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
+
+        }
+
+
+        .library-page-content-section
+        .section-heading > div {
+
+            min-width: 0;
+
+        }
+
+
+        .library-page-content-section
+        .section-heading
+        .section-kicker {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #71717a;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .library-page-content-section
+        .section-heading h2 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 22px;
+
+            font-weight: 750;
+
+            letter-spacing: -0.5px;
+
+        }
+
+
+        .library-page-content-section
+        .result-count {
+
+            flex-shrink: 0;
+
+            padding: 7px 12px;
+
+            border: 1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 999px;
+
+            color: #a1a1aa;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           EMPTY LIBRARY
+           ===================================================== */
+
+        .library-page-content-section
+        .empty-state {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 280px;
+
+            padding: 40px 20px;
+
+            border: 1px dashed
+                rgba(255,255,255,0.10);
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            text-align: center;
+
+        }
+
+
+        .library-page-content-section
+        .empty-icon {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 62px;
+
+            height: 62px;
+
+            margin-bottom: 17px;
+
+            border-radius: 18px;
+
+            color: #a78bfa;
+
+            background:
+                rgba(139,92,246,0.10);
+
+            font-size: 23px;
+
+        }
+
+
+        .library-page-content-section
+        .empty-state h3 {
+
+            margin: 0 0 7px;
+
+            color: #ffffff;
+
+            font-size: 17px;
+
+        }
+
+
+        .library-page-content-section
+        .empty-state p {
+
+            max-width: 400px;
+
+            margin: 0 0 20px;
+
+            color: #71717a;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .library-header {
+
+                min-height: auto;
+
+                padding: 30px 25px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .library-title-area {
+
+                gap: 16px;
+
+            }
+
+
+            .library-main-icon {
+
+                width: 62px;
+
+                height: 62px;
+
+                border-radius: 16px;
+
+                font-size: 22px;
+
+            }
+
+
+            .library-title-area h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .library-title-area p {
+
+                font-size: 13px;
+
+            }
+
+
+            section.library-tabs {
+
+                width: 100%;
+
+            }
+
+
+            section.library-tabs
+            .library-tab {
+
+                flex: 1;
+
+                min-width: 0;
+
+                padding: 0 10px;
+
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .library-header {
+
+                padding: 25px 20px;
+
+            }
+
+
+            .library-title-area {
+
+                align-items: flex-start;
+
+            }
+
+
+            .library-main-icon {
+
+                width: 54px;
+
+                height: 54px;
+
+                font-size: 19px;
+
+            }
+
+
+            .library-title-area h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            .library-title-area p {
+
+                margin-top: 7px;
+
+                font-size: 12px;
+
+            }
+
+
+            .library-page-content-section
+            .section-heading {
+
+                align-items: flex-start;
+
+            }
+
+
+            .library-page-content-section
+            .section-heading h2 {
+
+                font-size: 19px;
+
+            }
+
+
+            .library-page-content-section
+            .result-count {
+
+                font-size: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body data-page="library">
+
+<div class="app-shell">
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand-area">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-icon">
+                    <i class="fa-solid fa-wave-square"></i>
+                </span>
+
+                <span class="brand-text">
+                    MUSIC<span>LOGIST</span>
+                </span>
+
+            </a>
+
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+                type="button"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="index.html" class="nav-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="search.html" class="nav-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                </a>
+
+                <a
+                    href="library.html"
+                    class="nav-link active"
+                >
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Library</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <p class="nav-title">YOUR MUSIC</p>
+
+                <a
+                    href="playlist.html"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-list-music"></i>
+                    <span>Playlists</span>
+                </a>
+
+                <a
+                    href="library.html?tab=recent"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Recently Played</span>
+                </a>
+
+                <a
+                    href="downloads.html"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-download"></i>
+                    <span>Downloads</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section nav-bottom">
+
+                <p class="nav-title">GENERAL</p>
+
+                <button
+                    class="nav-link nav-button"
+                    id="themeButton"
+                    type="button"
+                >
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+
+                <button
+                    class="nav-link nav-button"
+                    id="aboutButton"
+                    type="button"
+                >
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About MUSICLOGIST</span>
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="mini-profile">
+
+                <div class="profile-avatar">M</div>
+
+                <div class="profile-info">
+
+                    <strong>MUSICLOGIST</strong>
+
+                    <span>Music Discovery</span>
+
+                </div>
+
+                <button
+                    class="profile-more"
+                    type="button"
+                >
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="breadcrumb">
+
+                <span>Music</span>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <strong>Library</strong>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="search.html"
+                    class="header-search"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search music...</span>
+                    <kbd>Ctrl K</kbd>
+                </a>
+
+                <button
+                    class="icon-button"
+                    type="button"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+
+                <button
+                    class="header-avatar"
+                    type="button"
+                >
+                    M
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <div class="page-content">
+
+            <!-- =================================================
+                 LIBRARY HERO
+                 ================================================= -->
+
+            <section class="library-header">
+
+                <div class="library-title-area">
+
+                    <div class="library-main-icon">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="section-kicker">
+                            YOUR COLLECTION
+                        </span>
+
+                        <h1>Your Library</h1>
+
+                        <p>
+                            Everything you love, saved in one place.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TABS
+                 ================================================= -->
+
+            <section class="library-tabs">
+
+                <button
+                    type="button"
+                    class="library-tab active"
+                    data-library-tab="favorites"
+                >
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Favorites</span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="library-tab"
+                    data-library-tab="recent"
+                >
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Recently Played</span>
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 LIBRARY SONGS
+                 ================================================= -->
+
+            <section class="content-section library-page-content-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span
+                            class="section-kicker"
+                            id="libraryKicker"
+                        >
+                            FAVORITES
+                        </span>
+
+                        <h2 id="libraryHeading">
+                            Your favorite tracks
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="result-count"
+                        id="libraryCount"
+                    >
+                        0 tracks
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="library-song-grid"
+                    id="librarySongs"
+                ></div>
+
+
+                <div
+                    class="empty-state hidden"
+                    id="libraryEmpty"
+                >
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+
+                    <h3>Your library is empty</h3>
+
+
+                    <p>
+                        Start exploring music and save the tracks you love.
+                    </p>
+
+
+                    <a
+                        href="search.html"
+                        class="primary-button"
+                    >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Explore Music
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     PLAYER
+     ========================================================= -->
+
+<div id="musicPlayerContainer"></div>
+
+
+<!-- =========================================================
+     OVERLAY / TOAST
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+<!-- =========================================================
+     ABOUT MODAL
+     ========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="aboutModal"
+>
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            id="aboutModalClose"
+            type="button"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="modal-logo">
+
+            <i class="fa-solid fa-wave-square"></i>
+
+        </div>
+
+
+        <span class="section-kicker">
+            ABOUT THE PROJECT
+        </span>
+
+
+        <h2>MUSICLOGIST</h2>
+
+
+        <p>
+            Your personal space for favorite tracks and listening history.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="js/app.js"></script>
+<script src="js/player.js"></script>
+<script src="js/library.js"></script>
+
+</body>
+</html>

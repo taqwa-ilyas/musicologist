@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MUSICLOGIST | Discover Your Sound</title>
+
+    <meta
+        name="description"
+        content="MUSICLOGIST is a modern music discovery and playlist platform."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body data-page="home">
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand-area">
+                <a href="index.html" class="brand">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-wave-square"></i>
+                    </span>
+
+                    <span class="brand-text">
+                        MUSIC<span>LOGIST</span>
+                    </span>
+                </a>
+
+                <button class="sidebar-close" id="sidebarClose">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section">
+                    <p class="nav-title">MAIN</p>
+
+                    <a href="index.html" class="nav-link active">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <a href="search.html" class="nav-link">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
+                    </a>
+
+                    <a href="library.html" class="nav-link">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Library</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-title">YOUR MUSIC</p>
+
+                    <a href="playlist.html" class="nav-link">
+                        <i class="fa-solid fa-list-music"></i>
+                        <span>Playlists</span>
+                    </a>
+
+                    <a href="library.html?tab=recent" class="nav-link">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Recently Played</span>
+                    </a>
+
+                    <a href="downloads.html" class="nav-link">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Downloads</span>
+                    </a>
+                </div>
+
+                <div class="nav-section nav-bottom">
+                    <p class="nav-title">GENERAL</p>
+
+                    <button class="nav-link nav-button" id="themeButton">
+                        <i class="fa-solid fa-moon"></i>
+                        <span>Dark Mode</span>
+                    </button>
+
+                    <button class="nav-link nav-button" id="aboutButton">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>About MUSICLOGIST</span>
+                    </button>
+                </div>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="mini-profile">
+                    <div class="profile-avatar">M</div>
+
+                    <div class="profile-info">
+                        <strong>MUSICLOGIST</strong>
+                        <span>Music Discovery</span>
+                    </div>
+
+                    <button class="profile-more">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+
+                <button class="mobile-menu-button" id="mobileMenuButton">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="breadcrumb">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <strong>Discover</strong>
+                </div>
+
+                <div class="header-actions">
+
+                    <a href="search.html" class="header-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search music...</span>
+                        <kbd>Ctrl K</kbd>
+                    </a>
+
+                    <button class="icon-button notification-button">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <button class="header-avatar">M</button>
+
+                </div>
+
+            </header>
+
+            <!-- CONTENT -->
+            <div class="page-content">
+
+                <!-- HERO -->
+                <section class="hero-section">
+
+                    <div class="hero-content">
+
+                        <span class="eyebrow">
+                            <i class="fa-solid fa-sparkles"></i>
+                            MUSIC FOR EVERY MOMENT
+                        </span>
+
+                        <h1>
+                            Find your next
+                            <span>favorite sound.</span>
+                        </h1>
+
+                        <p>
+                            Discover music, build playlists and keep every
+                            favorite track in one beautiful place.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <a href="search.html" class="primary-button">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Explore Music
+                            </a>
+
+                            <a href="playlist.html" class="secondary-button">
+                                <i class="fa-solid fa-list"></i>
+                                My Playlists
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hero-art">
+
+                        <div class="hero-orbit orbit-one"></div>
+                        <div class="hero-orbit orbit-two"></div>
+
+                        <div class="hero-disc">
+                            <div class="disc-center">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                        </div>
+
+                        <div class="floating-card floating-card-one">
+                            <i class="fa-solid fa-headphones"></i>
+                            <div>
+                                <strong>Discover</strong>
+                                <span>New sounds</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-card floating-card-two">
+                            <i class="fa-solid fa-heart"></i>
+                            <div>
+                                <strong>Favorites</strong>
+                                <span>Saved for you</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- QUICK STATS -->
+                <section class="quick-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+
+                        <div>
+                            <span>Discover</span>
+                            <strong>Unlimited Music</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon cyan">
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+
+                        <div>
+                            <span>Create</span>
+                            <strong>Your Playlists</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon pink">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div>
+                            <span>Save</span>
+                            <strong>Your Favorites</strong>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- CATEGORIES -->
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-kicker">EXPLORE</span>
+                            <h2>Browse by mood</h2>
+                        </div>
+
+                        <a href="search.html" class="view-link">
+                            View all
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="category-grid">
+
+                        <button class="category-card category-purple" data-category="Trending">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <strong>Trending</strong>
+                            <span>What's hot now</span>
+                        </button>
+
+                        <button class="category-card category-pink" data-category="Pop">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                            <strong>Pop</strong>
+                            <span>Modern favorites</span>
+                        </button>
+
+                        <button class="category-card category-blue" data-category="Rock">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-guitar"></i>
+                            </div>
+                            <strong>Rock</strong>
+                            <span>Feel the energy</span>
+                        </button>
+
+                        <button class="category-card category-orange" data-category="Instrumental">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-piano"></i>
+                            </div>
+                            <strong>Instrumental</strong>
+                            <span>Pure melodies</span>
+                        </button>
+
+                        <button class="category-card category-green" data-category="Chill">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-cloud-moon"></i>
+                            </div>
+                            <strong>Chill</strong>
+                            <span>Slow your mind</span>
+                        </button>
+
+                        <button class="category-card category-cyan" data-category="Workout">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-dumbbell"></i>
+                            </div>
+                            <strong>Workout</strong>
+                            <span>Power your session</span>
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- FEATURED MUSIC -->
+                <section class="content-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-kicker">CURATED FOR YOU</span>
+                            <h2>Featured music</h2>
+                        </div>
+
+                        <a href="search.html" class="view-link">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="music-grid" id="featuredMusicGrid">
+
+                        <!-- JavaScript inserts songs -->
+
+                    </div>
+
+                </section>
+
+                <!-- RECENT -->
+                <section class="content-section recent-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-kicker">YOUR ACTIVITY</span>
+                            <h2>Recently played</h2>
+                        </div>
+
+                        <a href="library.html?tab=recent" class="view-link">
+                            See history
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="recent-list" id="recentList">
+                        <!-- JavaScript inserts recent songs -->
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- PLAYER -->
+    <div id="musicPlayerContainer"></div>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ABOUT MODAL -->
+    <div class="modal-overlay" id="aboutModal">
+
+        <div class="modal-card">
+
+            <button class="modal-close" id="aboutModalClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-logo">
+                <i class="fa-solid fa-wave-square"></i>
+            </div>
+
+            <span class="section-kicker">ABOUT THE PROJECT</span>
+
+            <h2>MUSICLOGIST</h2>
+
+            <p>
+                MUSICLOGIST is a modern music discovery and playlist
+                platform created as a full-stack web development project.
+            </p>
+
+            <div class="modal-features">
+
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Music Discovery</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-list"></i>
+                    <span>Smart Playlists</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>Responsive Design</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/player.js"></script>
+</body>
+</html>

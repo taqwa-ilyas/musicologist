@@ -1,0 +1,1247 @@
+/* =========================================================
+   MUSICOLOGIST
+   PREMIUM MUSIC PLAYER
+   ========================================================= */
+
+
+/* =========================================================
+   YOUTUBE VIDEO
+   HIDE VIDEO BUT KEEP AUDIO PLAYBACK
+   ========================================================= */
+
+/*
+   YouTube IFrame API player ko visually hide kiya gaya hai.
+   Video playback background mein continue rahega.
+*/
+
+#youtubePlayerContainer,
+.youtube-player-container,
+.youtube-player,
+.music-player iframe[src*="youtube.com"],
+.music-player iframe[src*="youtube-nocookie.com"] {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    min-width: 1px !important;
+    min-height: 1px !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    border: 0 !important;
+
+    overflow: hidden !important;
+
+    visibility: hidden !important;
+}
+
+
+/* =========================================================
+   MAIN PLAYER
+   ========================================================= */
+
+.music-player {
+
+    position: fixed;
+
+    left: 240px;
+    right: 0;
+    bottom: 0;
+
+    height: 82px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(230px, 1fr)
+        minmax(360px, 1.4fr)
+        minmax(230px, 1fr);
+
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 10px 26px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18, 18, 29, 0.96),
+            rgba(10, 10, 17, 0.98)
+        );
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 -12px 45px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    z-index: 1500;
+}
+
+
+/* subtle top glow */
+
+.music-player::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 18%;
+    right: 18%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(139, 92, 246, 0.55),
+            rgba(6, 182, 212, 0.35),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   SONG INFORMATION
+   ========================================================= */
+
+.player-song {
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* Album Art */
+
+.player-cover {
+
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #27203f,
+            #102f38
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+.player-cover img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* Song information */
+
+.player-song-info {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.player-song-title {
+
+    max-width: 190px;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+.player-song-artist {
+
+    max-width: 190px;
+
+    overflow: hidden;
+
+    color: #8f8f9d;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   FAVORITE BUTTON
+   ========================================================= */
+
+.player-like {
+
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-left: 2px;
+
+    border-radius: 50%;
+
+    color: #777783;
+
+    background: transparent;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.player-like:hover {
+
+    color: #fb7185;
+
+    background: rgba(244, 63, 94, 0.10);
+
+    transform: scale(1.08);
+}
+
+.player-like i {
+
+    font-size: 13px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CENTER PLAYER
+   ========================================================= */
+
+.player-center {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   PLAYER CONTROLS
+   ========================================================= */
+
+.player-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+/* Base control */
+
+.player-control {
+
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #858592;
+
+    background: transparent;
+
+    font-size: 11px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.player-control:hover {
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: scale(1.06);
+}
+
+
+/* Shuffle / Repeat */
+
+.player-control.active {
+
+    color: #a78bfa;
+
+    background: rgba(139, 92, 246, 0.10);
+}
+
+.player-control.active:hover {
+
+    color: #c4b5fd;
+
+    background: rgba(139, 92, 246, 0.16);
+}
+
+
+/* Previous / Next */
+
+.player-control[data-action="previous"],
+.player-control[data-action="next"] {
+
+    color: #b5b5bf;
+
+    font-size: 12px;
+}
+
+.player-control[data-action="previous"]:hover,
+.player-control[data-action="next"]:hover {
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   MAIN PLAY BUTTON
+   ========================================================= */
+
+.player-control.main {
+
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    margin: 0 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 7px 20px rgba(139, 92, 246, 0.28);
+
+    font-size: 13px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.player-control.main:hover {
+
+    transform: scale(1.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b6cff,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 10px 28px rgba(139, 92, 246, 0.42);
+}
+
+.player-control.main:active {
+
+    transform: scale(0.96);
+}
+
+.player-control.main i {
+
+    margin-left: 2px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROGRESS ROW
+   ========================================================= */
+
+.player-progress-row {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+/* Time */
+
+.player-time {
+
+    width: 31px;
+
+    min-width: 31px;
+
+    color: #686873;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.player-time:last-child {
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.progress-container {
+
+    position: relative;
+
+    flex: 1;
+
+    height: 4px;
+
+    overflow: visible;
+
+    cursor: pointer;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+.progress-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    pointer-events: none;
+}
+
+
+/* Progress */
+
+.progress-bar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 0 8px rgba(139, 92, 246, 0.28);
+
+    z-index: 2;
+}
+
+
+/* Progress dot */
+
+.progress-dot {
+
+    position: absolute;
+
+    top: 50%;
+    left: 0%;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    opacity: 0;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.15),
+        0 0 10px rgba(255, 255, 255, 0.4);
+
+    z-index: 5;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.progress-container:hover .progress-dot {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.player-right {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+}
+
+
+/* Extra controls */
+
+.player-extra-button {
+
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #777783;
+
+    background: transparent;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.player-extra-button:hover {
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: scale(1.05);
+}
+
+.player-extra-button i {
+
+    font-size: 11px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VOLUME
+   ========================================================= */
+
+.volume-wrapper {
+
+    width: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-left: 4px;
+}
+
+.volume-wrapper i {
+
+    width: 14px;
+
+    color: #777783;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* Volume slider */
+
+.volume-slider {
+
+    width: 100%;
+
+    height: 4px;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    border-radius: 999px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+
+/* Chrome / Edge */
+
+.volume-slider::-webkit-slider-thumb {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 2px solid #8b5cf6;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 8px rgba(139, 92, 246, 0.35);
+}
+
+
+/* Firefox */
+
+.volume-slider::-moz-range-thumb {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 2px solid #8b5cf6;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   QUEUE INDICATOR
+   ========================================================= */
+
+.queue-indicator {
+
+    min-width: 34px;
+
+    height: 29px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 0 8px;
+
+    border-radius: 9px;
+
+    color: #858592;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    font-size: 9px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.queue-indicator:hover {
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   PLAYER WHEN NOTHING IS PLAYING
+   ========================================================= */
+
+.player-song-title:empty::before {
+
+    content: "Nothing playing";
+
+    color: #ffffff;
+}
+
+.player-song-artist:empty::before {
+
+    content: "Choose a song to begin";
+
+    color: #777783;
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+.player-control:focus-visible,
+.player-extra-button:focus-visible,
+.player-like:focus-visible {
+
+    outline: 2px solid rgba(139, 92, 246, 0.8);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   MOBILE PLAYER
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .music-player {
+
+        left: 210px;
+
+        grid-template-columns:
+            minmax(190px, 1fr)
+            auto;
+
+        height: 76px;
+
+        gap: 14px;
+
+        padding: 8px 16px;
+    }
+
+    .player-center {
+
+        min-width: 180px;
+    }
+
+    .player-right {
+
+        gap: 4px;
+    }
+
+    .volume-wrapper {
+
+        width: 80px;
+    }
+}
+
+
+/* =========================================================
+   SMALLER MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .music-player {
+
+        left: 0;
+        right: 0;
+
+        height: 72px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        padding: 8px 13px;
+    }
+
+    .music-player::before {
+
+        left: 10%;
+        right: 10%;
+    }
+
+    .player-song {
+
+        flex: 1;
+
+        min-width: 0;
+
+        gap: 9px;
+    }
+
+    .player-cover {
+
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+
+        border-radius: 9px;
+    }
+
+    .player-song-title {
+
+        max-width: 145px;
+
+        font-size: 11px;
+    }
+
+    .player-song-artist {
+
+        max-width: 145px;
+
+        font-size: 9px;
+    }
+
+    .player-like {
+
+        width: 30px;
+        height: 30px;
+
+        min-width: 30px;
+    }
+
+    .player-center {
+
+        display: none;
+    }
+
+    .player-right {
+
+        flex-shrink: 0;
+
+        gap: 3px;
+    }
+
+    .player-extra-button,
+    .queue-indicator,
+    .volume-wrapper {
+
+        display: none;
+    }
+
+    .player-control.mobile-play {
+
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        color: #ffffff;
+
+        background:
+            linear-gradient(
+                135deg,
+                #8b5cf6,
+                #6d28d9
+            );
+
+        box-shadow:
+            0 7px 18px rgba(139, 92, 246, 0.28);
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .music-player {
+
+        height: 68px;
+
+        padding: 7px 10px;
+    }
+
+    .player-cover {
+
+        width: 44px;
+        height: 44px;
+
+        min-width: 44px;
+    }
+
+    .player-song-title {
+
+        max-width: 120px;
+
+        font-size: 10px;
+    }
+
+    .player-song-artist {
+
+        max-width: 120px;
+
+        font-size: 8px;
+    }
+
+    .player-control.mobile-play {
+
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+    }
+}
+
+
+/* =========================================================
+   RECENTLY PLAYED - CLEAN ALIGNMENT
+   ========================================================= */
+
+.recent-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
+
+    min-height: 76px;
+
+    padding: 12px 16px;
+
+    margin-bottom: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 14px;
+
+    box-sizing: border-box;
+
+    transition:
+        0.2s ease;
+}
+
+.recent-item:hover {
+
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* Song image */
+
+.recent-art {
+
+    width: 56px;
+    height: 56px;
+
+    min-width: 56px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    display: block;
+}
+
+
+/* Song information */
+
+.recent-details {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.recent-details strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.recent-details span {
+
+    display: block;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    color: #a1a1aa;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* Recent play */
+
+.recent-actions {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.recent-actions .small-icon-button {
+
+    width: 40px;
+    height: 40px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(139, 92, 246, 0.15);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.recent-actions .small-icon-button:hover {
+
+    transform: scale(1.08);
+
+    background:
+        rgba(139, 92, 246, 0.35);
+
+    border-color:
+        rgba(139, 92, 246, 0.35);
+}
+
+
+/* =========================================================
+   RECENT MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .recent-item {
+
+        gap: 12px;
+
+        padding: 10px 12px;
+    }
+
+    .recent-art {
+
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+    }
+
+    .recent-details strong {
+
+        font-size: 14px;
+    }
+
+    .recent-details span {
+
+        font-size: 12px;
+    }
+
+    .recent-actions .small-icon-button {
+
+        width: 36px;
+        height: 36px;
+    }
+}

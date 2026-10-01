@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search | MUSICOLOGIST</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Player Styles -->
+    <link rel="stylesheet" href="css/player.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body data-page="search">
+
+
+    <!-- =====================================================
+         APP SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand-area">
+
+                <div class="brand">
+
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+
+                    <div class="brand-text">
+                        MUSIC<span>OLOGIST</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="sidebar-nav">
+
+
+                <!-- DISCOVER -->
+
+                <div class="nav-section">
+
+                    <div class="nav-title">
+                        Discover
+                    </div>
+
+                    <a
+                        href="index.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <a
+                        href="search.html"
+                        class="nav-link active"
+                    >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
+                    </a>
+
+                </div>
+
+
+                <!-- YOUR MUSIC -->
+
+                <div class="nav-section">
+
+                    <div class="nav-title">
+                        Your Music
+                    </div>
+
+                    <a
+                        href="library.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Library</span>
+                    </a>
+
+                    <a
+                        href="playlist.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-list"></i>
+                        <span>Playlists</span>
+                    </a>
+
+                    <a
+                        href="downloads.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-download"></i>
+                        <span>Downloads</span>
+                    </a>
+
+                </div>
+
+
+            </nav>
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <div class="mini-profile">
+
+                    <div class="profile-avatar">
+                        TI
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>
+                            Taqwa Ilyas
+                        </strong>
+
+                        <span>
+                            Musicologist
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="profile-more"
+                        type="button"
+                        aria-label="Profile options"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOP HEADER -->
+
+            <header class="top-header">
+
+                <div>
+
+                    <h1>
+                        Search Music
+                    </h1>
+
+                    <p>
+                        Find your favorite songs, artists and categories.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 SEARCH BOX
+                 ================================================= -->
+
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search songs, artists or categories..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="searchSongs(document.getElementById('searchInput').value)"
+                        title="Search"
+                    >
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Search</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SEARCH RESULTS
+                 ================================================= -->
+
+            <section class="search-results-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Search Results
+                        </h2>
+
+                        <p>
+                            Discover music from YouTube
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="searchResults"
+                    class="search-results"
+                >
+
+                    <div class="search-empty">
+
+                        <div class="search-empty-icon">
+
+                            <i class="fa-solid fa-music"></i>
+
+                        </div>
+
+                        <h3>
+                            Search for music
+                        </h3>
+
+                        <p>
+                            Enter a song, artist, or category above.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         MUSIC PLAYER
+         ===================================================== -->
+
+    <div id="musicPlayerContainer"></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/app.js"></script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="js/player.js"></script>
+
+    <script src="js/search.js"></script>
+
+
+</body>
+</html>

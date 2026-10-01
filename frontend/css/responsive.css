@@ -1,0 +1,403 @@
+/* =========================================================
+   MUSICLOGIST - RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .category-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .music-grid,
+    .library-song-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .playlist-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .hero-art {
+        right: -50px;
+        opacity: 0.75;
+    }
+
+    .hero-content {
+        width: 68%;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    :root {
+        --sidebar-width: 225px;
+    }
+
+    .page-content {
+        padding: 30px;
+    }
+
+    .top-header {
+        padding: 0 30px;
+    }
+
+    .hero-section {
+        padding: 38px;
+    }
+
+    .hero-art {
+        right: -120px;
+        opacity: 0.45;
+    }
+
+    .hero-content {
+        width: 80%;
+    }
+
+    .header-search {
+        width: 190px;
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    :root {
+        --sidebar-width: 0px;
+    }
+
+    .sidebar {
+        width: 260px;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        box-shadow:
+            20px 0 60px rgba(0,0,0,0.35);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-close {
+        display: grid;
+        place-items: center;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .top-header {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-button {
+        display: grid;
+        place-items: center;
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .header-search {
+        display: none;
+    }
+
+    .page-content {
+        padding: 25px 20px 100px;
+    }
+
+    .hero-section {
+        min-height: 410px;
+
+        padding: 30px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-art {
+        right: -150px;
+        top: 25px;
+
+        opacity: 0.18;
+    }
+
+    .quick-stats {
+        grid-template-columns:
+            1fr;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .music-grid,
+    .library-song-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .playlist-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+
+        inset: 0;
+
+        display: none;
+
+        background: rgba(0,0,0,0.65);
+
+        backdrop-filter: blur(3px);
+
+        z-index: 900;
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .page-content {
+        padding: 20px 15px 100px;
+    }
+
+    .top-header {
+        height: 65px;
+        padding: 0 15px;
+    }
+
+    .hero-section {
+        min-height: 430px;
+
+        padding: 25px 22px;
+
+        border-radius: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .hero-art {
+        width: 320px;
+        height: 320px;
+
+        right: -130px;
+        top: 115px;
+    }
+
+    .hero-disc {
+        width: 145px;
+        height: 145px;
+    }
+
+    .orbit-one {
+        width: 230px;
+        height: 230px;
+    }
+
+    .orbit-two {
+        width: 170px;
+        height: 170px;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .category-card {
+        min-height: 115px;
+    }
+
+    .music-grid,
+    .library-song-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .music-card {
+        padding: 8px;
+    }
+
+    .music-title {
+        font-size: 10px;
+    }
+
+    .music-artist {
+        font-size: 9px;
+    }
+
+    .search-result-card {
+        grid-template-columns:
+            55px minmax(0,1fr);
+    }
+
+    .result-thumbnail {
+        width: 55px;
+        height: 43px;
+    }
+
+    .result-actions {
+        grid-column: 2;
+
+        justify-content: flex-start;
+    }
+
+    .result-button {
+        flex: 1;
+
+        justify-content: center;
+    }
+
+    .playlist-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .playlist-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .playlist-card {
+        min-height: 185px;
+
+        padding: 10px;
+    }
+
+    .playlist-cover {
+        height: 105px;
+    }
+
+    .download-hero {
+        align-items: flex-start;
+    }
+
+    .download-hero-icon {
+        width: 60px;
+        height: 60px;
+
+        flex-shrink: 0;
+    }
+
+    .download-item {
+        grid-template-columns:
+            42px 1fr;
+    }
+
+    .download-file-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .download-button {
+        grid-column: 2;
+
+        justify-content: center;
+    }
+
+    .library-title-area {
+        align-items: flex-start;
+    }
+
+    .library-main-icon {
+        width: 60px;
+        height: 60px;
+
+        flex-shrink: 0;
+
+        font-size: 20px;
+    }
+
+    .library-tabs {
+        overflow-x: auto;
+    }
+
+    .library-tab {
+        white-space: nowrap;
+    }
+
+    .modal-card {
+        padding: 25px 20px;
+    }
+
+    .modal-features {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .category-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .music-grid,
+    .library-song-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .playlist-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+}
